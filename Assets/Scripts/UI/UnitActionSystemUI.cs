@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class UnitActionSystemUI : MonoBehaviour
 {
     [SerializeField] private Transform actionButtonPrefab;
     [SerializeField] private Transform actionButtonContainerTransform;
+    [SerializeField] private TextMeshProUGUI actionPointsText;
 
     private List<ActionButtonUI> actionButtonList;
 
@@ -18,7 +20,10 @@ public class UnitActionSystemUI : MonoBehaviour
     {
         UnitActionSystem.Instance.OnSelectedUnitChanged += UnitActionSystem_OnSelectedUnitChanged;
         UnitActionSystem.Instance.OnSelectedActionChanged += UnitActionSystem_OnSelectedUnitChanged;
-
+        UnitActionSystem.Instance.OnActionStarted += UnitActionSystem_OnActionStarted;
+        TurnSystem.Instance.OnTurnChanged += TurnSystem_OnTurnChanged;
+        Unit.OnAnyActionPointsChanged += Unit_OnAnyActionPointsChanged;
+        UpdateActionPoints();
         CreateUnitActionButtons();
         UpdateSelectedVisual();
     }
@@ -48,11 +53,27 @@ public class UnitActionSystemUI : MonoBehaviour
     {
         CreateUnitActionButtons();
         UpdateSelectedVisual();
+        UpdateActionPoints();
     }
 
     private void UnitActionSystem_OnSelectedActionChanged(object sender, EventArgs e)
     {
         UpdateSelectedVisual();
+    }
+
+    private void UnitActionSystem_OnActionStarted(object sender, EventArgs e)
+    {
+        UpdateActionPoints();
+    }
+
+    private void TurnSystem_OnTurnChanged(object sender, EventArgs e)
+    {
+        UpdateActionPoints();
+    }
+
+    private void Unit_OnAnyActionPointsChanged(object sender, EventArgs e)
+    {
+        UpdateActionPoints();
     }
 
     private void UpdateSelectedVisual()
@@ -61,5 +82,11 @@ public class UnitActionSystemUI : MonoBehaviour
         {
             actionButtonUI.UpdateSelectedVisual();
         }
+    }
+
+    private void UpdateActionPoints()
+    {
+        Unit selectedUnit = UnitActionSystem.Instance.GetSelectedUnit();
+        actionPointsText.text = "Action Poonts: " + selectedUnit.GetActionPoints();
     }
 }
