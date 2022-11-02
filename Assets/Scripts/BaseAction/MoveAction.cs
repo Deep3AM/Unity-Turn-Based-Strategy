@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MoveAction : BaseAction
 {
-    delegate void MoveCompleteDelegate();
-    [SerializeField] private Animator unitAnimator;
+    public event EventHandler OnStartMoving;
+    public event EventHandler OnStopMoving;
     [SerializeField] int maxMoveDistance;
     private Vector3 targetPosition;
     protected override void Awake()
@@ -29,12 +29,10 @@ public class MoveAction : BaseAction
 
             float moveSpeed = 4f;
             transform.position += moveDirection * moveSpeed * Time.deltaTime;
-
-            unitAnimator.SetBool("IsWalking", true);
         }
         else
         {
-            unitAnimator.SetBool("IsWalking", false);
+            OnStopMoving?.Invoke(this, EventArgs.Empty);
             ActionComplete();
         }
 
@@ -46,6 +44,7 @@ public class MoveAction : BaseAction
     {
         ActionStart(onActionComplete);
         this.targetPosition = LevelGrid.Instance.GetWorldPosition(gridPosition);
+        OnStartMoving?.Invoke(this, EventArgs.Empty);
     }
 
 
