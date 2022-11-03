@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 3173028164730766357}
   - component: {fileID: 136158984123244889}
   - component: {fileID: 8072280766073982222}
+  - component: {fileID: 8561589969438340825}
+  - component: {fileID: 7964521797675133163}
   m_Layer: 7
   m_Name: Unit
   m_TagString: Untagged
@@ -156,6 +158,32 @@ MonoBehaviour:
   animator: {fileID: 5907600438306662039}
   bulletProjectilePrefab: {fileID: 6752638231474953549, guid: bc3b65d0ddb83004aa301517b34feec0, type: 3}
   shootPointTransform: {fileID: 2065645704532670003}
+--- !u!114 &8561589969438340825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811981706670754251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16d367de99dbcf4484bd18cdf12dd50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7964521797675133163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5811981706670754251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 846d1aa6128bfc54d87a6f076817c03e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ragdollPrefab: {fileID: 5811981706670754250, guid: c1a2923c75e95454f88a77d18f4da5c2, type: 3}
+  originalRootBone: {fileID: 5816938012514800533}
 --- !u!1 &5937737187991991953
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +698,11 @@ Transform:
 --- !u!4 &5816408535306995599 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4580766925885248, guid: 2f3e27eecb190e44a9af50723c394274, type: 3}
+  m_PrefabInstance: {fileID: 5811981707807328463}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5816938012514800533 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4966341056781146, guid: 2f3e27eecb190e44a9af50723c394274, type: 3}
   m_PrefabInstance: {fileID: 5811981707807328463}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &5907600438306662039 stripped
