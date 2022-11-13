@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 6549027177861429688}
   - component: {fileID: 6102113363944223012}
   - component: {fileID: 7438701905563161228}
+  - component: {fileID: 651797170443879559}
   m_Layer: 7
   m_Name: Canvas
   m_TagString: Untagged
@@ -189,6 +190,19 @@ MonoBehaviour:
   unit: {fileID: 5811981706670754245}
   healthBarImage: {fileID: 7097835947239495786}
   healthSystem: {fileID: 8561589969438340825}
+--- !u!114 &651797170443879559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4586244070127144234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769f168ce585eb74d991aa1dade79c4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  invert: 1
 --- !u!1 &5775210091665538151
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +634,6 @@ GameObject:
   - component: {fileID: 9063336277374293605}
   - component: {fileID: 8641443776945184005}
   - component: {fileID: 7624705580720155509}
-  - component: {fileID: 3554743472477608920}
   m_Layer: 7
   m_Name: ActionPointsText
   m_TagString: Untagged
@@ -745,19 +758,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &3554743472477608920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7994090716774760331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 769f168ce585eb74d991aa1dade79c4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invert: 1
 --- !u!1001 &5811981706837701674
 PrefabInstance:
   m_ObjectHideFlags: 0
