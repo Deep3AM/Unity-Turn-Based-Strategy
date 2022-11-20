@@ -3,7 +3,7 @@ public class PathNode
     private GridPosition gridPosition;
     private int gCost;
     private int hCost;
-    private int wCost;
+    private int fCost;
     private PathNode cameFromPathNode;
 
     public PathNode(GridPosition gridPosition)
@@ -26,8 +26,43 @@ public class PathNode
         return hCost;
     }
 
-    public int GetWCost()
+    public int GetFCost()
     {
-        return wCost;
+        return fCost;
+    }
+
+    public void SetGCost(int gCost)
+    {
+        this.gCost = gCost;
+    }
+
+    public void SetHCost(int hCost)
+    {
+        this.hCost = hCost;
+    }
+
+    public void CalcuateFCost()
+    {
+        fCost = gCost + hCost;
+    }
+
+    public void ResetCameFromPathNode()
+    {
+        cameFromPathNode = null;
+    }
+
+    public void SetCameFromPathNode(PathNode pathNode)
+    {
+        cameFromPathNode = pathNode;
+    }
+
+    public PathNode GetCameFromPathNode()
+    {
+        return cameFromPathNode;
+    }
+
+    public GridPosition GetGridPosition()
+    {
+        return gridPosition;
     }
 }
